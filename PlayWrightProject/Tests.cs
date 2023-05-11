@@ -16,7 +16,7 @@ public class Tests
             Headless = false
         });
         var page = await browser.NewPageAsync();
-        await page.GotoAsync("https://playwright.dev");
-        Thread.Sleep(10000);
+        await page.GotoAsync("https://www.heroeswm.ru/");
+        Thread.Sleep(1000);
     }
 }
