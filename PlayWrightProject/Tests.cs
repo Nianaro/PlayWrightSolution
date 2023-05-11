@@ -10,6 +10,9 @@ public class Tests
     [Test]
     public async Task Test()
     {
+        Environment.SetEnvironmentVariable("SELENIUM_REMOTE_URL", 
+        "http://localhost:4444/wd/hub");
+
         using var playwright = await Playwright.CreateAsync();
         await using var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions{ Headless = false });
         var page = await browser.NewPageAsync();
