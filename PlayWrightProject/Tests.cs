@@ -14,7 +14,10 @@ public class Tests : TestBase
         await using var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions{ Headless = false });
         var page = await browser.NewPageAsync();
         await page.GotoAsync("https://www.heroeswm.ru/");
-        Thread.Sleep(1000);       
+        await page.Locator("[name=login]").FillAsync("");
+        await page.Locator("[name=pass]").FillAsync("");
+        await page.Locator("div.entergame").ClickAsync();
+        Thread.Sleep(2000);
     }
 
     /* [Test]
