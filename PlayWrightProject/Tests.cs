@@ -31,14 +31,12 @@ public class Tests : TestBase
             if (text.Contains("»»»"))
             {
                 await arrow.ClickAsync();
-                Thread.Sleep(3000);
-                //await page.WaitForLoadStateAsync(LoadState.DOMContentLoaded);
-                return;
+                break;
             }
         }
 
-        await page.Locator(".getjob_submitBtn").ClearAsync();
-        await page.WaitForLoadStateAsync(LoadState.DOMContentLoaded);
+        await page.Locator(".getjob_submitBtn").ClickAsync();
+        await page.WaitForLoadStateAsync();
     }
 
     /* [Test]
