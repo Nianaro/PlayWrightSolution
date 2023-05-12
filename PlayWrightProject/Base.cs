@@ -3,11 +3,11 @@ using Microsoft.Extensions.Configuration;
 
 namespace PlayWrightProject;
 
-public class TestBase
+public class Base
 {
     private static string env = "";
 
-    static TestBase()
+    static Base()
     {
         var builder = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())

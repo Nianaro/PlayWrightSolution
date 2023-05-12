@@ -5,10 +5,10 @@ namespace PlayWrightProject;
 
 [Parallelizable(ParallelScope.All)]
 [TestFixture]
-public class Tests : TestBase
+public class Auto : Base
 {
     [Test]
-    public async Task Test()
+    public async Task GetJob()
     {
         using var playwright = await Playwright.CreateAsync();
         await using var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions { Headless = false });
